@@ -1,18 +1,16 @@
 version: "3.7"
 services:
-  chaperoo-client:
-    image: jordangrindrod/chaperoo-client
+  chaperoo-frontend:
+    image: 2033109/chaperoo-frontend:1
     build: .
     ports:
       - target: 80
         published: 80
     depends_on:
-      - chaperoo-service    
-  chaperoo-service: 
+      - chaperoo-service
+  chaperoo-service:
     image: jordangrindrod/chaperoo-service
-    environment:
-      - DB_PASSWORD=root
-    depends_on: 
+    depends_on:
       - chaperoo-db
   chaperoo-db:
     image: jordangrindrod/chaperoo-db

@@ -11,10 +11,10 @@ services:
   chaperoo-service: 
     image: jordangrindrod/chaperoo-service
     environment:
-      - DB_PASSWORD=${DB_PASSWORD}
+      - DB_PASSWORD=root
     depends_on: 
       - chaperoo-db
   chaperoo-db:
     image: jordangrindrod/chaperoo-db
     environment:
-      - MYSQL_ROOT_PASSWORD=${DB_PASSWORD}
+      - MYSQL_ROOT_PASSWORD=root
